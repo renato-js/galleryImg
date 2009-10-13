@@ -1,0 +1,36 @@
+galleryImg - Criada por Guilherme Rambo, baseada na classe m2brimagem de Davi Tavares Ferreira e Paulo Coutinho
+
+Tarefas:
+
+1 - Carregar imagem:
+
+$img = new galleryImg("origem.png");
+
+2 - Gravar imagem (enviar imagem ao browser):
+
+$img = new galleryImg("origem.png");
+header("Content-type:image/png");
+$img->grava();
+
+3 - Gravar imagem (em arquivo):
+
+$img = new galleryImg("origem.png");
+$img->grava("arquivo.jpg", true, 100);
+
+4 - Converter png em jpg mantendo o fundo branco:
+
+$img = new galleryImg("origem.png");
+$img->fix_png_alpha();
+$img->grava("arquivo.jpg", true, 100);
+
+5 - Converter png em jpg trocando o background:
+
+$img = new galleryImg("origem.png");
+$bg = array(255,0,0); //vermelho
+$img->fix_png_alpha($bg);
+$img->grava("arquivo.jpg", true, 100);
+
+6 - Redimensionar imagem:
+
+$img = new galleryImg("origem.png");
+$img->redimensiona(250,250,'crop');
